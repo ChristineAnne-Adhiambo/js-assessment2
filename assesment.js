@@ -59,8 +59,13 @@ function addNewBook(book) {
   book.isAvailable = true;
   books.push(book);
 }
+// addNewBook ({ title: 'Kaleidoscope', author: 'Daniel Steel', publicationYear: 1951,
+// isAvailable: true });
 
-// 4. Create a function checkoutBook that takes a book title as an argument and changes the book's isAvailable property to false. If the book is not found in the library, the function should return a message indicating that the book is not available.
+// 4. Create a function checkoutBook that takes a book title as an argument 
+// and changes the book's isAvailable property to false. 
+// If the book is not found in the library, the function should 
+//return a message indicating that the book is not available.
 function checkoutBook(bookTitle) {
   const book = books.find(book => book.title === bookTitle);
   if (!book) {
@@ -69,6 +74,7 @@ function checkoutBook(bookTitle) {
   }
   book.isAvailable = false;
 }
+checkoutBook();
 
 // 5. Create a function returnBook that takes a book title as an argument and changes the book's isAvailable property to true. If the book is not found in the library, the function should return a message indicating that the book does not belong to the library.
 function returnBook(bookTitle) {
@@ -84,7 +90,9 @@ function returnBook(bookTitle) {
 
 console.log(getAvailableBooks()); 
 console.log(getBooksByAuthor('Charles Dickens')); 
-addNewBook({ title: 'To Kill a Mockingbird', author: 'Harper Lee', publicationYear: 1960 });
+
+addNewBook ({ title: 'Kaleidoscope', author: 'Daniel Steel', publicationYear: 1951,
+ isAvailable: true });
 console.log(getAvailableBooks()); 
 checkoutBook('The Great Gatsby');
 console.log(books); 
